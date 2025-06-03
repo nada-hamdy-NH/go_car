@@ -18,13 +18,32 @@ class _ForgetPasswordState extends State<ForgetPassword> {
   late final List<TextEditingController> _controllers;
   late final List<bool> isFilledList;
   int isFocused = -1;
+
+
   Timer? _timer;
   int _start = 180; // 3 دقائق
   bool _isExpired = false;
+  void startTimer() {
+    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
+      if (_start == 0) {
+        setState(() {
+          _isExpired = true;
+        });
+        timer.cancel();
+      } else {
+        setState(() {
+          _start--;
+        });
+      }
+    });
+  }
+
+
   @override
   void initState() {
     super.initState();
     startTimer();
+ /// The [FocusNode]s are initialized here and their listeners are added.
     _focusNodes = List.generate(otpLength, (index) {
       final node = FocusNode();
       node.addListener(() {
@@ -48,6 +67,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
   @override
   void dispose() {
     _timer?.cancel();
+    
     for (final node in _focusNodes) {
       node.dispose();
     }
@@ -57,20 +77,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
     super.dispose();
   }
 
-  void startTimer() {
-    _timer = Timer.periodic(const Duration(seconds: 1), (timer) {
-      if (_start == 0) {
-        setState(() {
-          _isExpired = true;
-        });
-        timer.cancel();
-      } else {
-        setState(() {
-          _start--;
-        });
-      }
-    });
-  }
+  
 
   void _onChanged(String value, int index) {
     setState(() {
@@ -139,7 +146,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
               ),
               SizedBox(height: 30.h),
 
-              //forget password otp
+              //forget password otp row ****************************************************
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -208,6 +215,8 @@ class _ForgetPasswordState extends State<ForgetPassword> {
                 }),
               ),
               SizedBox(height: 420.h),
+
+              //forget password otp resend Time Row ****************************************************
              RichText(
   text: TextSpan(
     children: [

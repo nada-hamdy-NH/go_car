@@ -67,6 +67,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         SizedBox(
                           height: 20.h,
                         ),
+
+                        // Custom carousel slider *****************************************
                         SizedBox(
                           width: double.infinity,
                           child: CarouselSlider(
@@ -100,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                           ),
                         ),
                         SizedBox(height: 15.h),
-                        // Custom dot indicators
+                        // Custom dot indicators   ****************************************
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: List.generate(images.length, (index) {
@@ -122,7 +124,7 @@ class _HomeScreenState extends State<HomeScreen> {
                             );
                           }),
                         ),
-            
+                 // List of cars and names   ****************************************
                         Padding(
                           padding: const EdgeInsets.only(
                               left: 10, right: 10, top: 20, bottom: 10),
@@ -183,6 +185,8 @@ class _HomeScreenState extends State<HomeScreen> {
                         ),
                       ],
                     )),
+
+                // Current location   ****************************************
                 Container(
                     width: double.infinity,
                     decoration: BoxDecoration(
@@ -219,6 +223,8 @@ class _HomeScreenState extends State<HomeScreen> {
                           SizedBox(
                             height: 8.h,
                           ),
+
+                          // Where to   ****************************************
                           TextField(
                               decoration: InputDecoration(
                                   isDense: true,
@@ -250,6 +256,9 @@ class _HomeScreenState extends State<HomeScreen> {
                               textAlign: TextAlign.start,
                             ),
                           ),
+
+                         // Passengers number.   ****************************************
+
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: List.generate(6, (index) {
@@ -289,6 +298,8 @@ class _HomeScreenState extends State<HomeScreen> {
                               textAlign: TextAlign.start,
                             ),
                           ),
+
+                          // Luggage number.   ****************************************
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: List.generate(6, (index) {
@@ -316,7 +327,7 @@ class _HomeScreenState extends State<HomeScreen> {
                               );
                             }),
                           ),
-                             
+                             // From to  Container ****************************************
                           Padding(
                             padding:  EdgeInsets.symmetric( vertical: 20.0.h),
                             child: Container(
@@ -408,6 +419,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     )),
               ],
             ),
+            
+            //  FloatingActionButton ****************************************
             Positioned(
              top: MediaQuery.of(context).size.height / 2 -10.h, // منتصف الصفحة عموديًا - نص ارتفاع الزر
         right: 35.w, 

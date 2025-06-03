@@ -34,11 +34,11 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
             label: _currentIndex == 0 ? 'Home' : '',
             labelStyle: TextStyle(
               foreground: Paint()
-                ..shader = LinearGradient(
+                ..shader = const LinearGradient(
                   colors: [Color(0xFF183E91), Color(0xFF266FFF)],
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
-                ).createShader(Rect.fromLTWH(0, 0, 200, 70)),
+                ).createShader(const Rect.fromLTWH(0, 0, 200, 70)),
               fontSize: 12.sp,
               fontWeight: FontWeight.w700,
             )),
@@ -51,7 +51,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
             label: _currentIndex == 1 ? 'Calendar' : '',
             labelStyle: TextStyle(
               foreground: Paint()
-                ..shader = LinearGradient(
+                ..shader = const LinearGradient(
                   colors: [Color(0xFF183E91), Color(0xFF266FFF)],
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
@@ -70,7 +70,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
             label: _currentIndex == 2 ? 'Wallet' : '',
             labelStyle: TextStyle(
               foreground: Paint()
-                ..shader = LinearGradient(
+                ..shader = const LinearGradient(
                   colors: [Color(0xFF183E91), Color(0xFF266FFF)],
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
@@ -89,7 +89,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
             label: _currentIndex == 3 ? 'Profile' : '',
             labelStyle: TextStyle(
               foreground: Paint()
-                ..shader = LinearGradient(
+                ..shader = const LinearGradient(
                   colors: [Color(0xFF183E91), Color(0xFF266FFF)],
                   begin: Alignment.bottomLeft,
                   end: Alignment.topRight,
@@ -114,7 +114,7 @@ class _BottomNavigationBarWidgetState extends State<BottomNavigationBarWidget> {
 }
 
 GradientText(text) {
-  final gradient = const LinearGradient(
+  const gradient = LinearGradient(
     begin: Alignment.bottomLeft,
     end: Alignment.topRight,
     colors: [Color(0xFF183E91), Color(0xFF266FFF)],
